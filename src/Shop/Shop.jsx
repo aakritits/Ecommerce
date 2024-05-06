@@ -17,18 +17,16 @@ const Shop = () => {
 
   const [checkedCategories, setCheckedCategories] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
-  // Options for Fuse
   const fuseOptions = {
-    keys: ["name", "description"], // Attributes to include in the search
-    includeScore: true, // Include score in the result (optional)
-    threshold: 0.3, // Tolerance of the search
+    keys: ["name", "description", "category"],
+    includeScore: true,
+    threshold: 0.3,
   };
 
-  // Create a new instance of Fuse
   const fuse = new Fuse(products, fuseOptions);
 
-  // Filter products based on checked categories
   let filteredProducts =
     checkedCategories.length > 0
       ? products.filter((product) =>
@@ -36,46 +34,57 @@ const Shop = () => {
         )
       : products;
 
-  // Apply search using fuse.js
   if (searchTerm) {
     const results = fuse.search(searchTerm);
     filteredProducts = results.map((result) => result.item);
   }
 
-  // Handle change on checkboxes
   const handleChecked = (category) => (event) => {
-    if (event.target.checked) {
-      setCheckedCategories([...checkedCategories, category]);
-    } else {
-      setCheckedCategories(
-        checkedCategories.filter((item) => item !== category)
-      );
-    }
+    const newCategories = event.target.checked
+      ? [...checkedCategories, category]
+      : checkedCategories.filter((item) => item !== category);
+    setCheckedCategories(newCategories);
   };
 
   return (
     <div className="m-4">
-      <input
-        type="text"
-        className=" py-1 mt-4 mb-4 block border-2 rounded-lg px-2"
-        placeholder="Search for an item"
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-      />
-      <span className="font-semibold">Filter by Categories</span>
+      <div className="flex items-center mb-4">
+        <input
+          type="text"
+          className="py-1 px-8 border-2 rounded-full"
+          placeholder="Search.."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
 
-      <div className="grid grid-cols-2 max-w-md mt-2 gap-1">
-        {categories.map((category) => (
-          <label key={category}>
-            <input
-              type="checkbox"
-              onChange={handleChecked(category)}
-              checked={checkedCategories.includes(category)}
-              className="mr-2"
-            />
-            {category}
-          </label>
-        ))}
+        <div className="relative ml-4">
+          <button
+            className="bg-gray-900 py-1 px-3 rounded-full text-white text-sm md:text-base lg:px-6 lg:py-1 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-opacity-50 transition duration-150 ease-in-out"
+            onClick={() => setDropdownOpen(true)}
+          >
+            Filter by Categories
+          </button>
+
+          {dropdownOpen && (
+            <div
+              className="absolute top-full mt-2 w-48 bg-white shadow-lg rounded"
+              onMouseEnter={() => setDropdownOpen(true)}
+              onMouseLeave={() => setDropdownOpen(false)}
+            >
+              {categories.map((category) => (
+                <label key={category} className="block p-2 hover:bg-gray-100">
+                  <input
+                    type="checkbox"
+                    onChange={handleChecked(category)}
+                    checked={checkedCategories.includes(category)}
+                    className="mr-2"
+                  />
+                  {category}
+                </label>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
 
       <div className="flex flex-wrap">
