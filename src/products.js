@@ -6,38 +6,6 @@ import product5 from "./images/5.jpeg";
 import product6 from "./images/6.jpeg";
 import product7 from "./images/7.jpeg";
 import product8 from "./images/8.avif";
-// import product9 from "./images/9.jpeg";
-// import product10 from "./images/10.jpeg";
-// import product11 from "./images/11.jpeg";
-// import product12 from "./images/12.jpeg";
-// import product13 from "./images/13.jpeg";
-// import product14 from "./images/14.jpeg";
-// import product15 from "./images/15.jpeg";
-// import product16 from "./images/16.jpeg";
-// import product17 from "./images/17.jpeg";
-// import product18 from "./images/18.jpeg";
-// import product19 from "./images/19.jpeg";
-// import product20 from "./images/20.jpeg";
-// import product21 from "./images/21.jpeg";
-// import product22 from "./images/22.jpeg";
-// import product23 from "./images/23.jpeg";
-// import product24 from "./images/24.jpeg";
-// import product25 from "./images/25.jpeg";
-// import product26 from "./images/26.jpeg";
-// import product27 from "./images/27.jpeg";
-// import product28 from "./images/28.jpeg";
-// import product29 from "./images/29.jpeg";
-// import product30 from "./images/30.jpeg";
-// import product31 from "./images/31.jpeg";
-// import product32 from "./images/32.jpeg";
-// import product33 from "./images/33.jpeg";
-// import product34 from "./images/34.jpeg";
-// import product35 from "./images/35.jpeg";
-// import product36 from "./images/36.jpeg";
-// import product37 from "./images/37.jpeg";
-// import product38 from "./images/38.jpeg";
-// import product39 from "./images/39.jpeg";
-// import product40 from "./images/40.jpeg";
 
 const products = [
   {

@@ -8,6 +8,7 @@ function Navbar() {
       <Link to="/" className="text-white text-lg font-bold mr-8">
         Shop
       </Link>
+      placeholder="Search for an item" />
       <div className="flex text-white text-lg font-bold">
         <Link to="/cart" className="text-white">
           <ShoppingCart size={32} />
