@@ -24,11 +24,11 @@ const CartPage = () => {
                   {item.name}
                 </span>
                 <div className="font-semibold">${item.price}</div>
-                <div className="mt-2 text-sm">
+                <div className="text-sm">
                   <button onClick={() => removeFromCart(item)}>-</button>
 
                   <input
-                    className="m-2 w-1/6 ml-4 mr-0"
+                    className="m-1 w-1/6 ml-5 mr-0"
                     value={item.quantity}
                     onChange={(e) => updatedCart(item, e.target.value)}
                   />
