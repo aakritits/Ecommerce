@@ -1,11 +1,12 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import products from "../products";
+import { useCart } from "../cartcontext/CartContext";
 
 const ProductDetail = () => {
   const { id } = useParams(); // Get the product ID from URL parameters
   const product = products.find((p) => p.id === id); // Find the product by ID
-
+  const { addToCart } = useCart();
   if (!product) {
     return <div>Product not found!</div>;
   }
@@ -26,7 +27,10 @@ const ProductDetail = () => {
           <div className="text-3xl font-bold">{product.name}</div>
           <div className="text-lg mt-2">{product.description}</div>
           <div className="text-xl font-bold mt-2">${product.price}</div>
-          <button className="mt-4 bg-black text-white rounded-full px-5 py-2 text-md">
+          <button
+            className="mt-4 bg-black text-white rounded-full px-5 py-2 text-md"
+            onClick={() => addToCart(product)}
+          >
             Add to Cart
           </button>
         </div>
