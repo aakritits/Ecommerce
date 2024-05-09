@@ -20,7 +20,7 @@ const Shop = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const fuseOptions = {
-    keys: ["name", "description", "category"],
+    keys: ["name", "category"],
     includeScore: true,
     threshold: 0.3,
   };

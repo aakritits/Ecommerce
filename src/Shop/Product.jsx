@@ -1,15 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useCart } from "../cartcontext/CartContext";
 
 const Product = (props) => {
   const { id, name, category, description, image, price } = props.data;
+  const { addToCart, cartItems } = useCart();
+  const item = cartItems.find((item) => item.id === id);
 
-  // Prevent the Link action when the Add to Cart button is clicked
   const handleClick = (event) => {
-    event.preventDefault(); // This prevents the link from being activated
-    event.stopPropagation(); // This stops the click event from bubbling up to the link
-    console.log("Add to cart clicked for", id); // Placeholder for add to cart functionality
+    event.preventDefault();
+    event.stopPropagation();
+    addToCart(props.data);
   };
+
+  const quantity = item ? item.quantity : null;
 
   return (
     <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4 mb-4 mt-4 flex flex-col">
@@ -31,7 +35,7 @@ const Product = (props) => {
         onClick={handleClick}
         className="bg-black text-white rounded-full p-2 mt-2"
       >
-        Add To Cart
+        Add To Cart {quantity}
       </button>
     </div>
   );
