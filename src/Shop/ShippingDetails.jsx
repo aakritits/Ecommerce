@@ -55,7 +55,7 @@ const ShippingDetails = () => {
           content="Ecommerce App, React JS, Tailwind CSS, Checkout Page"
         />
       </Helmet>
-      <div className="w-full lg:w-1/2 p-4 lg:p-12">
+      <div className="w-full lg:w-1/2 p-4 lg:p-8 md:w-[630px] md:p-8">
         <div className="space-y-4 bg-gray-900 p-6 lg:p-12 rounded-lg shadow-xl text-white">
           <span className="font-semibold">Shipping Details</span>
           <form onSubmit={handleSubmit}>
@@ -70,7 +70,7 @@ const ShippingDetails = () => {
               onChange={changeFirstname}
               type="text"
               placeholder="First Name"
-              className="block mt-4 text-black w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-400"
+              className="block mt-6 text-black w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-400"
               name="firstName"
               required
             />
@@ -81,7 +81,7 @@ const ShippingDetails = () => {
             <input
               value={values.address}
               onChange={changeaddress}
-              className="block  mt-4 w-full text-black px-4 py-2 border rounded-md focus:outline-none focus:border-blue-400"
+              className="block  mt-6 w-full text-black px-4 py-2 border rounded-md focus:outline-none focus:border-blue-400"
               type="text"
               placeholder="Address"
               name="address"
@@ -94,7 +94,7 @@ const ShippingDetails = () => {
             <input
               value={values.phone}
               onChange={changephone}
-              className="block  mt-4 w-full text-black px-4 py-2 border rounded-md focus:outline-none focus:border-blue-400"
+              className="block  mt-6 w-full text-black px-4 py-2 border rounded-md focus:outline-none focus:border-blue-400"
               type="text"
               placeholder="Phone"
               name="phone"
@@ -104,11 +104,11 @@ const ShippingDetails = () => {
               <span className="text-red-600">Please Enter a Phone Number</span>
             ) : null}
             <div className="flex">
-              <button className="block w-full  mt-4 px-2 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
+              <button className=" w-full  mt-6 px-2 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
                 Submit
               </button>
               <button
-                className="px-2  py-2 w-full mt-4 rounded-md ml-2 bg-blue-600"
+                className="px-2  py-2 w-full mt-6 rounded-md ml-2 bg-blue-600"
                 onClick={handleClearStorage}
               >
                 Shop More?

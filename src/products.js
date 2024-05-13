@@ -1,6 +1,4 @@
 import product1 from "./images/1.jpeg";
-import product2 from "./images/2.jpeg";
-import product3 from "./images/3.jpeg";
 import product4 from "./images/4.jpeg";
 import product5 from "./images/5.jpeg";
 import product6 from "./images/6.jpeg";
@@ -24,7 +22,7 @@ const products = [
     description:
       "A soothing blend of organic green tea leaves from the mountains of Himachal.",
     price: 15.5,
-    image: product2,
+    image: "https://bigbearkh.com/wp-content/uploads/2021/01/B07P9VBYD4.jpg",
   },
   {
     id: "3",
@@ -33,7 +31,8 @@ const products = [
     description:
       "Comfortable ergonomic office chair with lumbar support and breathable mesh back.",
     price: 250.0,
-    image: product3,
+    image:
+      "https://i5.walmartimages.com/asr/d74f9558-9369-4f91-842a-10df88d7d083_2.09a3f71391cdfb6b7fedda8e44266a30.jpeg",
   },
   {
     id: "4",
@@ -87,7 +86,7 @@ const products = [
     description:
       "Portable Bluetooth speaker with excellent sound quality and long battery life.",
     price: 45.99,
-    image: "https://example.com/images/product9.jpg",
+    image: "https://eezepc.com/wp-content/uploads/2019/09/A3391Z11-2.jpg",
   },
   {
     id: "10",
@@ -96,7 +95,8 @@ const products = [
     description:
       "Fast boiling electric kettle with auto shut-off and boil dry protection.",
     price: 29.99,
-    image: "https://example.com/images/product10.jpg",
+    image:
+      "https://assets.epicurious.com/photos/5ad6389443f92a3268c0b8c5/5:4/w_6780,h_5424,c_limit/The-Best-Electric-Kettle-11042018.jpg",
   },
 
   {
@@ -106,7 +106,8 @@ const products = [
     description:
       "Immersive wireless gaming headset with surround sound and noise cancellation.",
     price: 149.99,
-    image: "https://example.com/images/product11.jpg",
+    image:
+      "https://www.bhphotovideo.com/images/images1500x1500/astro_gaming_939_001673_a50_wireless_headset_with_1527191.jpg",
   },
   {
     id: "12",
@@ -115,7 +116,8 @@ const products = [
     description:
       "Cold-pressed organic coconut oil, perfect for cooking, baking, and skincare.",
     price: 12.99,
-    image: "https://example.com/images/product12.jpg",
+    image:
+      "https://anviearth.com/wp-content/uploads/2021/05/0H3A1970-scaled.jpg",
   },
   {
     id: "13",
@@ -124,7 +126,8 @@ const products = [
     description:
       "Electric adjustable standing desk with memory presets and spacious desktop.",
     price: 399.0,
-    image: "https://example.com/images/product13.jpg",
+    image:
+      "https://www.yestobuy.com.au/assets/alt_6/HASD-114E-WHDF-WODB-140.jpg?20200707064747",
   },
   {
     id: "14",
@@ -133,7 +136,8 @@ const products = [
     description:
       "High-quality professional chef's knife made from Damascus steel.",
     price: 99.5,
-    image: "https://example.com/images/product14.jpg",
+    image:
+      "https://cdn-s3.touchofmodern.com/products/001/515/425/9758db8684aa03d43e3bc8c35d72951c_large.jpg?1559348985",
   },
   {
     id: "15",
@@ -142,7 +146,8 @@ const products = [
     description:
       "Waterproof fitness tracker watch with heart rate monitor and GPS tracking.",
     price: 79.99,
-    image: "https://example.com/images/product15.jpg",
+    image:
+      "https://ozodeal.com/wp-content/uploads/2020/01/smart-watch-with-all-day-blood-pressure-heart-rate-monitor-waterproof-fitness-tracker-for-men-women-kids-1024x1024.jpg",
   },
   {
     id: "16",
@@ -150,7 +155,8 @@ const products = [
     category: "Electronics",
     description: "Compact portable power bank with fast charging capabilities.",
     price: 29.99,
-    image: "https://example.com/images/product16.jpg",
+    image:
+      "https://www.topbestproreview.com/wp-content/uploads/2020/12/1-9.jpg",
   },
   {
     id: "17",
@@ -159,7 +165,7 @@ const products = [
     description:
       "Eco-friendly reusable silicone food storage bags, a sustainable alternative to plastic.",
     price: 19.99,
-    image: "https://example.com/images/product17.jpg",
+    image: "https://www.hjcloseouts.com/wp-content/uploads/2021/01/lynmark.jpg",
   },
   {
     id: "18",
@@ -168,7 +174,8 @@ const products = [
     description:
       "Qi-certified wireless charging pad compatible with all Qi-enabled devices.",
     price: 24.99,
-    image: "https://example.com/images/product18.jpg",
+    image:
+      "https://www.bhphotovideo.com/images/images2500x2500/belkin_f7u027dqwht_boostup_wireless_charging_pad_1377117.jpg",
   },
   {
     id: "19",
@@ -177,7 +184,8 @@ const products = [
     description:
       "Handheld vegetable spiralizer for creating healthy vegetable noodles and garnishes.",
     price: 14.95,
-    image: "https://example.com/images/product19.jpg",
+    image:
+      "https://www.thespruceeats.com/thmb/IkS7WrgajctMs_3HOwuDRVEDMuc=/1500x1500/filters:fill(auto,1)/Zyliss_Spiralizers_Spiralizer_HeroSquare-dcea548fb9554e4295b531995f143769.jpg",
   },
   {
     id: "20",
@@ -186,7 +194,7 @@ const products = [
     description:
       "Set of resistance bands with varying levels of resistance for strength training.",
     price: 29.95,
-    image: "https://example.com/images/product20.jpg",
+    image: "http://www.fitstream.com/images/products/complete-band-pack.jpeg",
   },
 
   {
@@ -196,7 +204,8 @@ const products = [
     description:
       "Stylish leather messenger bag with multiple compartments for laptops and accessories.",
     price: 89.99,
-    image: "https://example.com/images/product21.jpg",
+    image:
+      "https://cdn.shopify.com/s/files/1/1884/8161/products/2_Holtz_Leather_messenger_bag_brifecase_The_No._1860_EXPRESS_-_Fine_Leather_Messenger_Bag_Mens_Briefcase_NEW_1800x1800.jpg?v=1569064547",
   },
   {
     id: "22",
@@ -205,7 +214,8 @@ const products = [
     description:
       "High-resolution digital camera with advanced autofocus and image stabilization.",
     price: 499.0,
-    image: "https://example.com/images/product22.jpg",
+    image:
+      "https://cdn.shopify.com/s/files/1/0091/4119/0735/products/PNDMCFZ2500_16539.jpg?v=1591734438",
   },
   {
     id: "23",
@@ -214,7 +224,8 @@ const products = [
     description:
       "Set of indoor plants including succulents, cacti, and air-purifying varieties.",
     price: 39.99,
-    image: "https://example.com/images/product23.jpg",
+    image:
+      "https://www.yourhomeandgarden.co.nz/wp-content/uploads/2019/03/Top10IndoorPlants_YHG_main.jpg",
   },
   {
     id: "24",
@@ -223,7 +234,8 @@ const products = [
     description:
       "True wireless earbuds with Bluetooth connectivity and immersive sound quality.",
     price: 79.99,
-    image: "https://example.com/images/product24.jpg",
+    image:
+      "https://www.bassheadspeakers.com/wp-content/uploads/2019/11/Falwedi-True-Wireless-Earbuds-for-iPhone.jpg",
   },
   {
     id: "25",
@@ -232,7 +244,8 @@ const products = [
     description:
       "Complete cookware set including pots, pans, and utensils for all your cooking needs.",
     price: 149.0,
-    image: "https://example.com/images/product25.jpg",
+    image:
+      "https://i5.walmartimages.com/asr/22b0d4e3-8e16-4d49-8add-1cec79023f48.d07b14fc58ff9a5253cc0ed39a6433fe.jpeg",
   },
   {
     id: "26",
@@ -241,7 +254,8 @@ const products = [
     description:
       "Wi-Fi enabled smart thermostat with programmable settings and energy-saving features.",
     price: 129.99,
-    image: "https://example.com/images/product26.jpg",
+    image:
+      "https://images-na.ssl-images-amazon.com/images/I/61sPMq0N6nL._AC_SL1500_.jpg",
   },
   {
     id: "27",
@@ -249,7 +263,8 @@ const products = [
     category: "Kitchenware",
     description: "Compact portable espresso maker for coffee lovers on the go.",
     price: 49.95,
-    image: "https://example.com/images/product27.jpg",
+    image:
+      "https://cdn-s3.touchofmodern.com/products/001/869/216/94a1d74ce7d18d68656e02c1f38f2d7c_large.jpg?1591119296",
   },
   {
     id: "28",
@@ -258,7 +273,8 @@ const products = [
     description:
       "Durable travel backpack with TSA-approved laptop compartment and anti-theft features.",
     price: 69.99,
-    image: "https://example.com/images/product28.jpg",
+    image:
+      "https://images-na.ssl-images-amazon.com/images/I/715fjbcihnL._SL1050_.jpg",
   },
   {
     id: "29",
@@ -267,7 +283,7 @@ const products = [
     description:
       "Wireless charging stand compatible with smartphones, smartwatches, and earbuds.",
     price: 34.99,
-    image: "https://example.com/images/product29.jpg",
+    image: "https://m.media-amazon.com/images/I/41aYSKpcqJL.jpg",
   },
   {
     id: "30",
@@ -276,7 +292,8 @@ const products = [
     description:
       "Premium memory foam mattress with cooling gel technology for a comfortable night's sleep.",
     price: 799.0,
-    image: "https://example.com/images/product30.jpg",
+    image:
+      "https://i5.walmartimages.com/asr/2c0b9a15-41ed-4ed9-b488-398f13d3713d_3.4f8f2b67ce944616e771a9b5c6f584a3.jpeg",
   },
   {
     id: "31",
@@ -285,7 +302,8 @@ const products = [
     description:
       "Wireless home security camera system with motion detection and night vision.",
     price: 199.99,
-    image: "https://example.com/images/product31.jpg",
+    image:
+      "https://images-na.ssl-images-amazon.com/images/I/71nRYHxdhPL._SL1500_.jpg",
   },
   {
     id: "32",
@@ -294,79 +312,8 @@ const products = [
     description:
       "Compact portable blender for making smoothies, shakes, and juices on the go.",
     price: 39.95,
-    image: "https://example.com/images/product32.jpg",
-  },
-  {
-    id: "33",
-    name: "Fitness Foam Roller",
-    category: "Fitness",
-    description:
-      "High-density foam roller for self-myofascial release and muscle recovery after workouts.",
-    price: 24.99,
-    image: "https://example.com/images/product33.jpg",
-  },
-  {
-    id: "34",
-    name: "Wireless Security Alarm System",
-    category: "Home & Garden",
-    description:
-      "DIY wireless security alarm system with smartphone app control and customizable alerts.",
-    price: 149.95,
-    image: "https://example.com/images/product34.jpg",
-  },
-  {
-    id: "35",
-    name: "Stainless Steel Cookware Set",
-    category: "Kitchenware",
-    description:
-      "Premium stainless steel cookware set with non-stick coating and ergonomic handles.",
-    price: 199.0,
-    image: "https://example.com/images/product35.jpg",
-  },
-  {
-    id: "36",
-    name: "Smart Doorbell",
-    category: "Home & Garden",
-    description:
-      "Wi-Fi enabled smart doorbell with video camera and two-way audio communication.",
-    price: 129.99,
-    image: "https://example.com/images/product36.jpg",
-  },
-  {
-    id: "37",
-    name: "Bluetooth Car Kit",
-    category: "Automotive",
-    description:
-      "Bluetooth car kit for hands-free calling and wireless music streaming in your car.",
-    price: 29.99,
-    image: "https://example.com/images/product37.jpg",
-  },
-  {
-    id: "38",
-    name: "Wireless Charging Mouse Pad",
-    category: "Electronics",
-    description:
-      "Mouse pad with built-in wireless charging pad for smartphones and other Qi-enabled devices.",
-    price: 39.99,
-    image: "https://example.com/images/product38.jpg",
-  },
-  {
-    id: "39",
-    name: "Yoga Block Set",
-    category: "Fitness",
-    description:
-      "Set of yoga blocks made from high-density foam for support and stability in yoga poses.",
-    price: 19.99,
-    image: "https://example.com/images/product39.jpg",
-  },
-  {
-    id: "40",
-    name: "Smart LED Light Bulbs",
-    category: "Home & Garden",
-    description:
-      "Wi-Fi enabled smart LED light bulbs with adjustable brightness and color temperature.",
-    price: 19.99,
-    image: "https://example.com/images/product40.jpg",
+    image:
+      "https://i5.walmartimages.com/asr/f3585bc8-c2de-430f-829c-ae666021773f_1.8ba1fcc76dc4a906d97d1228ae9c45d5.jpeg?odnWidth=1000&odnHeight=1000&odnBg=ffffff",
   },
 ];
 export default products;

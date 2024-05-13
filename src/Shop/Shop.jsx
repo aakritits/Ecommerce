@@ -22,7 +22,7 @@ const Shop = () => {
   const fuseOptions = {
     keys: ["name", "category"],
     includeScore: true,
-    threshold: 0.3,
+    threshold: 0.5,
   };
 
   const fuse = new Fuse(products, fuseOptions);
