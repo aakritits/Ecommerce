@@ -1,16 +1,30 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useState, useEffect } from "react";
 
 const CartContext = createContext();
 
 export const useCart = () => useContext(CartContext);
 
 export const CartProvider = ({ children }) => {
-  const [cartItems, setCartItems] = useState([]);
+  const getCartItems = () => {
+    try {
+      const items = localStorage.getItem("cartItems");
+      return items ? JSON.parse(items) : [];
+    } catch (e) {
+      console.error("Failed to parse cart items:", e);
+      return [];
+    }
+  };
+
+  const [cartItems, setCartItems] = useState(getCartItems());
 
   const totalAmount = cartItems.reduce(
     (total, item) => total + item.price * item.quantity,
     0
   );
+  useEffect(() => {
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  }, [cartItems]);
+
   const addToCart = (product) => {
     setCartItems((prevItems) => {
       let found = false;
@@ -65,7 +79,14 @@ export const CartProvider = ({ children }) => {
   };
   return (
     <CartContext.Provider
-      value={{ cartItems, addToCart, removeFromCart, updatedCart, totalAmount }}
+      value={{
+        cartItems,
+        addToCart,
+        removeFromCart,
+        updatedCart,
+        totalAmount,
+        setCartItems,
+      }}
     >
       {children}
     </CartContext.Provider>

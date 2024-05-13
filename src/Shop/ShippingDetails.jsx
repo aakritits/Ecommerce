@@ -10,7 +10,7 @@ const ShippingDetails = () => {
     phone: "",
   });
   const [submitted, setSubmitted] = useState(false);
-  const { cartItems, totalAmount } = useCart();
+  const { cartItems, totalAmount, setCartItems } = useCart();
   const navigate = useNavigate();
 
   const changeFirstname = (event) => {
@@ -28,6 +28,17 @@ const ShippingDetails = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     setSubmitted(true);
+  };
+  // Function to navigate to dashboard and clear local storage
+  const handleClearStorage = () => {
+    // Clear local storage
+    localStorage.removeItem("cartItems");
+
+    // Update state to reflect the cleared cart
+    setCartItems([]);
+
+    // Navigate to dashboard
+    navigate("/");
   };
 
   return (
@@ -50,7 +61,7 @@ const ShippingDetails = () => {
           <form onSubmit={handleSubmit}>
             {submitted && values.firstName && values.address && values.phone ? (
               <div className="text-green-600">
-                Success! Thank you for ordering!
+                Thank you for ordering! Your order will be dispatched shortly.
               </div>
             ) : null}
 
@@ -98,9 +109,9 @@ const ShippingDetails = () => {
               </button>
               <button
                 className="px-2  py-2 w-full mt-4 rounded-md ml-2 bg-blue-600"
-                onClick={() => navigate("/")}
+                onClick={handleClearStorage}
               >
-                Continue Shopping
+                Shop More?
               </button>
             </div>
           </form>
