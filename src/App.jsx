@@ -5,6 +5,7 @@ import "./styles/design.css";
 import Navbar from "./components/Navbar";
 import ProductDetail from "./Shop/ProductDetail";
 import CartPage from "./Shop/CartPage";
+import ShippingDetails from "./Shop/ShippingDetails";
 const App = () => {
   return (
     <div>
@@ -14,6 +15,15 @@ const App = () => {
           <Route path="/" element={<Shop />} />
           <Route path="/product/:id" element={<ProductDetail />} />
           <Route path="/cart" element={<CartPage />} />
+          <Route path="/shippingdetails" element={<ShippingDetails />} />
+          <Route
+            path="*"
+            element={
+              <div className="text-center h-screen mt-16">
+                This Route is not available.
+              </div>
+            }
+          />
         </Routes>
       </Router>
     </div>

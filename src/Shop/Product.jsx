@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useCart } from "../cartcontext/CartContext";
+import { Helmet } from "react-helmet";
 
 const Product = (props) => {
   const { id, name, category, description, image, price } = props.data;
@@ -17,6 +18,15 @@ const Product = (props) => {
 
   return (
     <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4 mb-4 mt-4 flex flex-col">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>E-Commerce App</title>
+        <meta
+          name="description"
+          content="E-commerce App using React JS and Tailwind CSS"
+        />
+        <meta name="keywords" content="Ecommerce App, React JS, Tailwind CSS" />
+      </Helmet>
       <Link
         to={`/product/${id}`}
         className="no-underline text-black flex flex-col flex-1"
