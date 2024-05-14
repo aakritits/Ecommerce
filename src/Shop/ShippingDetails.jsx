@@ -95,7 +95,7 @@ const ShippingDetails = () => {
               value={values.phone}
               onChange={changephone}
               className="block  mt-6 w-full text-black px-4 py-2 border rounded-md focus:outline-none focus:border-blue-400"
-              type="text"
+              type="number"
               placeholder="Phone"
               name="phone"
               required
@@ -111,7 +111,7 @@ const ShippingDetails = () => {
                 className="px-2  py-2 w-full mt-6 rounded-md ml-2 bg-blue-600"
                 onClick={handleClearStorage}
               >
-                Shop More?
+                Finish
               </button>
             </div>
           </form>

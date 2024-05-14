@@ -51,15 +51,15 @@ const Shop = () => {
       <div className="flex items-center mb-4">
         <input
           type="text"
-          className="py-1 px-8 border-2 rounded-full"
+          className="py-1 px-2 md:px-8 border-2 rounded-full"
           placeholder="Search.."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
 
-        <div className="relative ml-4">
+        <div className="relative ml-2">
           <button
-            className="bg-gray-900 py-1 px-3 rounded-full text-white text-sm md:text-base lg:px-6 lg:py-1 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-opacity-50 transition duration-150 ease-in-out"
+            className="bg-gray-900 px-1 rounded-full text-white text-md md:text-base lg:px-6 lg:py-2 md:px-6 py-2 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-700 focus:ring-opacity-50 transition duration-200 ease-in-out"
             onClick={() => setDropdownOpen(true)}
           >
             Filter by Categories

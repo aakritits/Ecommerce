@@ -4,7 +4,7 @@ import { useCart } from "../cartcontext/CartContext";
 import { Helmet } from "react-helmet";
 
 const Product = (props) => {
-  const { id, name, category, description, image, price } = props.data;
+  const { id, name, image, price } = props.data;
   const { addToCart, cartItems } = useCart();
   const item = cartItems.find((item) => item.id === id);
 

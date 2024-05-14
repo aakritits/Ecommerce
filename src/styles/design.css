@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind utilities;
 @tailwind components;
+/* @media (min-width: 516px) and (min-height: 900px) {
+  .md\:hidden {
+    display: none;
+  }
+} */
