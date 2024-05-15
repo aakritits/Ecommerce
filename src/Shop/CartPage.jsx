@@ -3,7 +3,6 @@ import { useCart } from "../cartcontext/CartContext";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import Footer from "../components/Footer";
 
 const CartPage = () => {
   const { cartItems, addToCart, removeFromCart, updatedCart } = useCart();
