@@ -48,11 +48,11 @@ const Categories = () => {
 
   const { setSelectedCategory } = useCategory();
 
-  const navigate = useNavigate(); // Hook for navigation
+  const navigate = useNavigate();
 
   const handleCategory = (category) => {
     setSelectedCategory(category.name);
-    navigate("/"); // Navigate to the home page, which should be your Shop component
+    navigate("/");
   };
 
   return (
