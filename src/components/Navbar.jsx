@@ -1,13 +1,18 @@
 import React from "react";
 import { ShoppingCart } from "phosphor-react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Navbar() {
+  const navigate = useNavigate();
   return (
     <div className="flex sticky top-0 items-center justify-between bg-gray-900 py-4 px-4 ">
       <Link to="/" className="text-white text-lg font-bold mr-8">
         Shop
       </Link>
+      <button className="text-white" onClick={() => navigate("/categories")}>
+        Categories
+      </button>
       <div className="flex items-center">
         <div className="mr-3 sm:hidden">
           <a

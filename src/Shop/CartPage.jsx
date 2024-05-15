@@ -9,7 +9,7 @@ const CartPage = () => {
   const navigate = useNavigate();
 
   return (
-    <div>
+    <div className="mb-[82px]">
       <Helmet>
         <meta charSet="utf-8" />
         <title>Cart Items</title>
