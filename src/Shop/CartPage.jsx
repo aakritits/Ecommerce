@@ -3,6 +3,7 @@ import { useCart } from "../cartcontext/CartContext";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import Footer from "../components/Footer";
 
 const CartPage = () => {
   const { cartItems, addToCart, removeFromCart, updatedCart } = useCart();
@@ -24,7 +25,7 @@ const CartPage = () => {
       </Helmet>
       <h1 className="text-center font-bold m-6 text-2xl">Your Cart</h1>
       {cartItems.length > 0 ? (
-        <div className="grid grid-cols-1 gap-7 p-2">
+        <div className="grid grid-cols-1 gap-7 p-2 mb-16">
           {cartItems.map((item) => (
             <div key={item.id}>
               <div className="bg-white flex justify-center items-center h-48">

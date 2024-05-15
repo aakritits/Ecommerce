@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="md:grid md:grid-cols-3 bg-gray-900 p-8 text-md gap-4 mb-0">
+    <div className="bg-gray-900 text-white p-8 gap-4 grid grid-cols-1 md:grid-cols-3 w-full">
       {/* Left Section */}
       <div className="grid grid-cols-1 text-white gap-2 sm:ml-0 md:ml-12 cursor-pointer">
         <span>Quick Links</span>

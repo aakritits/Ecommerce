@@ -1,3 +1,9 @@
 @tailwind base;
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 @tailwind utilities;
 @tailwind components;
