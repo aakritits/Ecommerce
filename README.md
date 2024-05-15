@@ -1,8 +1,21 @@
-# React + Vite
+    # E-Commerce
+    
+    
+    ## This project is an E-Commerce website with simple display of products and cart functionality, which utilizes React.js along with Tailwind CSS for styling, React Router DOM for navigation, Phosphor React for         icons, and various React Hooks for managing state and side effects.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+    - **React Components**: Utilizes modular React components for a scalable and maintainable codebase.
+    - **Tailwind CSS**: Uses Tailwind CSS for styling, allowing for rapid development and customization.
+    - **React Router DOM**: Implements client-side routing for a single-page application experience.
+    - **Phosphor React Icons**: Integrates modern and sleek icons using Phosphor React, enhancing the visual appeal of the project.
+    - **React Hooks**: Leverages React Hooks such as useParams, useContext, useEffect, useState, etc., for managing state, context, and side effects efficiently.
+    - **React Helmet**: Employs React Helmet for managing document head metadata, improving SEO and browser compatibility.
 
-Currently, two official plugins are available:
+    Installation:
+    1. git clone https://github.com/aakritits/Tradeverse.git
+    2. cd Tradeverse
+    3. cd ecommerce
+    4. npm install
+    5. npm install -D tailwindcss autoprefixer postcss
+    6. npx tailwindcss init -p 
+    7. npm install --save phosphor-react
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
