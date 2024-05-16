@@ -29,15 +29,13 @@ const ShippingDetails = () => {
     event.preventDefault();
     setSubmitted(true);
   };
-  // Function to navigate to dashboard and clear local storage
+
   const handleClearStorage = () => {
     // Clear local storage
     localStorage.removeItem("cartItems");
 
-    // Update state to reflect the cleared cart
+    // Update state to reflect the cleared cart and navigate to home
     setCartItems([]);
-
-    // Navigate to dashboard
     navigate("/");
   };
 

@@ -6,7 +6,6 @@ import Navbar from "./components/Navbar";
 import ProductDetail from "./Shop/ProductDetail";
 import CartPage from "./Shop/CartPage";
 import ShippingDetails from "./Shop/ShippingDetails";
-import Footer from "./components/Footer";
 import Categories from "./Shop/Categories";
 import { CategoryProvider } from "./cartcontext/CategoryContext";
 const App = () => {
@@ -31,7 +30,6 @@ const App = () => {
                 }
               />
             </Routes>
-            {/* <Footer /> */}
           </div>
         </CategoryProvider>
       </Router>
