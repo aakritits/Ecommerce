@@ -8,13 +8,16 @@ import CartPage from "./Shop/CartPage";
 import ShippingDetails from "./Shop/ShippingDetails";
 import Categories from "./Shop/Categories";
 import { CategoryProvider } from "./cartcontext/CategoryContext";
+import Footer from "./components/Footer";
 const App = () => {
   return (
     <div>
       <Router>
         <CategoryProvider>
-          <div className="flex flex-col flex-grow">
+          <div className="flex flex-col">
             <Navbar />
+            <div className="flex-grow">
+
             <Routes>
               <Route path="/" element={<Shop />} />
               <Route path="/product/:id" element={<ProductDetail />} />
@@ -30,8 +33,12 @@ const App = () => {
                 }
               />
             </Routes>
+            </div>
+
           </div>
         </CategoryProvider>
+        <Footer className="flex-shrink-0" />
+
       </Router>
     </div>
   );
