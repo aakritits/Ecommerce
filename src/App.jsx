@@ -33,13 +33,14 @@ const App = () => {
                 }
               />
             </Routes>
+            
             </div>
 
           </div>
         </CategoryProvider>
-        <Footer className="flex-shrink-0" />
 
       </Router>
+      
     </div>
   );
 };
