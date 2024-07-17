@@ -9,6 +9,7 @@
     - **Phosphor React Icons**: Integrates modern and sleek icons using Phosphor React, enhancing the visual appeal of the project.
     - **React Hooks**: Leverages React Hooks such as useParams, useContext, useEffect, useState, etc., for managing state, context, and side effects efficiently.
     - **React Helmet**: Employs React Helmet for managing document head metadata, improving SEO and browser compatibility.
+    - **Fuzzy Search**: Employs search functionality in such a way that users can search through a products description property that is not displayed on the page and can display products even in the case of             spelling errors.
 
     Installation:
     1. git clone https://github.com/aakritits/Tradeverse.git
