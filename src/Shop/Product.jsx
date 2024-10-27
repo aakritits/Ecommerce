@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useCart } from "../cartcontext/CartContext";
 import { Helmet } from "react-helmet";
+import { FaCartPlus } from "react-icons/fa"; 
+import { AiOutlineEye } from "react-icons/ai"; 
+import ProductPopup from "./ProductPopup"; 
 
 const Product = (props) => {
   const { id, name, image, price } = props.data;
   const { addToCart, cartItems } = useCart();
   const item = cartItems.find((item) => item.id === id);
+  
+  const [isPopupVisible, setIsPopupVisible] = useState(false); 
 
   const handleClick = (event) => {
     event.preventDefault();
@@ -14,39 +19,70 @@ const Product = (props) => {
     addToCart(props.data);
   };
 
-  const quantity = item ? item.quantity : null;
+  const quantity = item ? item.quantity : 0;
 
   return (
-    <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4 mb-4 mt-4 flex flex-col">
+    <div className="bg-white shadow-lg rounded-lg overflow-hidden flex flex-col  hover:bg-gray-200">
       <Helmet>
         <meta charSet="utf-8" />
-        <title>E-Commerce App</title>
+        <title>{name} - E-Commerce App</title>
         <meta
           name="description"
-          content="E-commerce App using React JS and Tailwind CSS"
+          content={`Check out the ${name} on our E-commerce platform.`}
         />
-        <meta name="keywords" content="Ecommerce App, React JS, Tailwind CSS" />
+        <meta
+          name="keywords"
+          content="Ecommerce, Product, React, Tailwind CSS"
+        />
       </Helmet>
       <Link
         to={`/product/${id}`}
-        className="no-underline text-black flex flex-col flex-1"
+        className="flex flex-col flex-1 no-underline text-black"
       >
-        <div className="bg-white flex justify-center items-center h-48">
-          <img src={image} alt={name} className="max-h-full max-w-full" />
+        <div className="flex justify-center items-center h-48 ">
+          <img
+            src={image}
+            alt={name}
+            className="object-contain max-h-full max-w-full"
+          />
         </div>
-        <div className="m-5 flex-1 flex flex-col justify-between">
+        <div className="m-4 flex-1 flex flex-col justify-between">
           <div>
-            <span className="block font-bold">{name}</span>
-            <span className="block">{price}</span>
+            <span className="block font-bold text-lg">{name}</span>
+            <span className="block text-gray-700 text-base">
+              Rs {price.toFixed(2)}
+            </span>
           </div>
         </div>
       </Link>
-      <button
-        onClick={handleClick}
-        className="bg-black text-white rounded-full p-2 mt-2"
-      >
-        Add To Cart {quantity}
-      </button>
+      <div className="flex justify-center space-x-4">
+        <button
+          onClick={handleClick}
+          className="bg-black text-white rounded-full px-4 py-2 mb-4 transition hover:bg-gray-700 flex items-center relative"
+        >
+          <FaCartPlus />
+          {quantity > 0 && (
+            <span className="absolute text-xs top-0 right-0 transform translate-x-1 -translate-y-1 bg-red-500 text-white rounded-full px-1">
+              {quantity}
+            </span>
+          )}
+        </button>
+
+        <button
+          onClick={() => setIsPopupVisible(true)} // Show popup on click
+          className="bg-black text-white rounded-full px-4 py-2 mb-4 transition hover:bg-gray-700 flex items-center"
+        >
+          <AiOutlineEye />
+        </button>
+      </div>
+
+      {/* Popup for product details */}
+      {isPopupVisible && (
+        <ProductPopup
+          product={{ id, name, image, price }} // Pass product data to popup
+          onClose={() => setIsPopupVisible(false)} // Close popup function
+        />
+      )}
     </div>
   );
 };

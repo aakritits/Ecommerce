@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useMemo } from "react";
+import React, { createContext, useContext, useState } from "react";
 
 const CategoryContext = createContext();
 
@@ -14,3 +14,35 @@ export const CategoryProvider = ({ children }) => {
   );
 };
 export default CategoryContext;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

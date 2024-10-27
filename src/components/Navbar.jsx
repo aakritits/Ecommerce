@@ -1,42 +1,82 @@
-import React from "react";
-import { ShoppingCart } from "phosphor-react";
+import React, { useState, useEffect } from "react";
+import { ShoppingCart, HouseLine } from "phosphor-react";
 import { Link, useNavigate } from "react-router-dom";
-import uglogo from "../images/ug-cakes-web-logo-small.webp";
+import { BiCategory } from "react-icons/bi";
+import Fuse from "fuse.js";
+import products from "../products";
+import { useCategory } from "../cartcontext/CategoryContext";
+import { useCart } from "../cartcontext/CartContext";
 
-function Navbar() {
+function Navbar({ setFilteredProducts }) {
   const navigate = useNavigate();
+  const { selectedCategory, setSelectedCategory } = useCategory();
+  const { cartItems } = useCart();
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const fuseOptions = {
+    keys: ["name", "category"],
+    includeScore: true,
+    threshold: 0.5,
+  };
+
+  const resetCategory = () => {
+    setSelectedCategory(null); // Reset the selected category
+    setFilteredProducts(products); // Show all products when no category is selected
+  };
+
+  useEffect(() => {
+    let activeProducts = products;
+
+    if (selectedCategory) {
+      activeProducts = products.filter(
+        (product) => product.category === selectedCategory
+      );
+    }
+
+    if (searchTerm) {
+      const fuse = new Fuse(activeProducts, fuseOptions);
+      const results = fuse.search(searchTerm);
+      setFilteredProducts(results.map((result) => result.item));
+    } else {
+      setFilteredProducts(activeProducts);
+    }
+  }, [searchTerm, selectedCategory, setFilteredProducts]);
+
+  const handleSearchChange = (e) => {
+    setSearchTerm(e.target.value);
+  };
+
   return (
-    <nav className="sticky top-0 bg-gray-900 py-4 px-4 flex items-center justify-between">
-      <div className="flex items-center space-x-4">
-        <Link to="/" className="text-white text-lg font-bold">
-          <img
-            src={uglogo}
-            alt="Logo"
-            className="w-16 sm:w-24 md:w-32 lg:w-40 h-auto"
-          />
+    <nav className="sticky top-0 bg-gray-900 py-4 px-4 flex items-center justify-between z-50">
+      <div className="flex gap-4 items-center">
+        <Link to="/" className="text-white text-lg font-bold" onClick={resetCategory}>
+          <HouseLine size={32} />
         </Link>
-        <button
-          className="text-white mr-5 rounded-full "
-          onClick={() => navigate("/categories")}
-        >
-          Shop By Categories
-        </button>
-      </div>
-      <div className="flex items-center">
-        <div className="sm:hidden mr-3">
-          <a
-            href="https://play.google.com/store/apps?hl=en&gl=US"
-            target="_blank"
-            className=" text-white rounded-full hover:bg-slate-600 transition duration-300 sm:hidden"
-          >
-            Download App
-          </a>
-        </div>
-        <div className="text-white text-lg font-bold">
-          <Link to="/cart">
-            <ShoppingCart size={32} className="text-white" />
+
+        <div className="relative group focus-within">
+          <Link to="/categories" className="text-white flex items-center gap-2">
+            <BiCategory size={20} /> Shop by categories
           </Link>
         </div>
+      </div>
+
+      <div className="flex items-center space-x-3">
+        <input
+          type="text"
+          className="py-2 px-6 w-44 sm:w-60 border-2 border-gray-300 rounded-md focus:outline-none focus:border-blue-500 transition duration-300"
+          placeholder="Search products..."
+          value={searchTerm}
+          onChange={handleSearchChange}
+        />
+
+        <Link to="/cart" className="text-white text-lg font-bold relative">
+          <ShoppingCart size={32} />
+          {cartItems.length > 0 && (
+            <span className="absolute top-0 right-0 bg-red-500 text-white text-xs rounded-full px-1 transform translate-x-1 -translate-y-1">
+              {cartItems.length}
+            </span>
+          )}
+        </Link>
       </div>
     </nav>
   );

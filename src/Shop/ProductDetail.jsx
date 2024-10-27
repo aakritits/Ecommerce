@@ -1,3 +1,4 @@
+// ProductDetail.js
 import React from "react";
 import { useParams } from "react-router-dom";
 import products from "../products";
@@ -11,34 +12,44 @@ const ProductDetail = () => {
   const item = cartItems.find((item) => item.id === id);
 
   if (!product) {
-    return <div>Product not found!</div>;
+    return <div className="text-center text-xl mt-16">Product not found!</div>;
   }
 
   const quantity = item ? item.quantity : null;
 
   return (
-    <div className="mx-auto max-w-4xl p-4">
-      <div className="flex flex-col md:flex-row bg-white mt-16 rounded-lg">
-        <div className="md:w-1/2">
+    <div className="mx-auto max-w-5xl p-6 mt-10">
+      <div className="flex flex-col md:flex-row rounded-lg shadow-lg overflow-hidden">
+        <div className="md:w-1/2 p-4 flex justify-center items-center ">
           <img
             src={product.image}
             alt={product.name}
-            className="object-contain h-96 w-full"
-          />
+            className="object-contain h-96 w-full "
+          /> 
         </div>
-        <div className="md:w-1/2 p-4">
-          <div className="text-3xl font-bold">{product.name}</div>
-          <div className="text-lg mt-2">{product.description}</div>
-          <div className="text-xl font-bold mt-2">${product.price}</div>
+        <div className="md:w-1/2 p-6">
+          <div className="text-4xl font-bold text-gray-800">{product.name}</div>
+          <div className="text-lg mt-4 text-gray-600 leading-relaxed">
+            {product.description}
+          </div>
+          <div className="text-2xl font-semibold text-gray-900 mt-6">
+            Rs {product.price.toFixed(2)}
+          </div>
           <button
-            className="mt-4 bg-black text-white rounded-full px-5 py-2 text-md"
+            className="mt-6 bg-black text-white font-medium rounded-full px-6 py-3 transition duration-200 hover:bg-gray-800 flex items-center relative"
             onClick={() => addToCart(product)}
           >
-            Add to Cart {quantity}
+            Add to Cart
+            {quantity > 0 && (
+              <span className="ml-2 text-xs bg-red-500 text-white rounded-full px-2 py-1 absolute -top-2 -right-2">
+                {quantity}
+              </span>
+            )}
           </button>
         </div>
       </div>
     </div>
   );
 };
+
 export default ProductDetail;

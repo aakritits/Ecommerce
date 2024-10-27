@@ -1,70 +1,27 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Product from "./Product";
-import { useCategory } from "../cartcontext/CategoryContext";
-import Fuse from "fuse.js";
-import products from "../products";
+import mainbanner from "../images/mainbanner.webp";
 
-const Shop = () => {
-  const { selectedCategory, setSelectedCategory } = useCategory();
-  const [searchTerm, setSearchTerm] = useState("");
-  const [filteredProducts, setFilteredProducts] = useState(products);
-
-  const fuseOptions = {
-    keys: ["name", "category"],
-    includeScore: true,
-    threshold: 0.5,
-  };
-
-  useEffect(() => {
-    let activeProducts = products;
-
-    if (selectedCategory) {
-      activeProducts = products.filter(
-        (product) => product.category === selectedCategory
-      );
-    }
-
-    if (searchTerm) {
-      const fuse = new Fuse(activeProducts, fuseOptions);
-      const results = fuse.search(searchTerm);
-      setFilteredProducts(results.map((result) => result.item));
-    } else {
-      setFilteredProducts(activeProducts);
-    }
-  }, [searchTerm, selectedCategory]);
-
-  const handleSearchChange = (e) => {
-    setSearchTerm(e.target.value);
-  };
-
-  const clearCategory = () => {
-    setSelectedCategory("");
-  };
-
+const Shop = ({ filteredProducts }) => {
   return (
-    <div className="m-4">
-      <div className="flex items-center mb-4 space-x-2 sm:space-x-3 md:space-x-4">
-        <input
-          type="text"
-          className="py-2 px-3 sm:px-4 w-full sm:w-auto border-2 border-gray-300 rounded-full focus:outline-none focus:border-blue-500 transition duration-300"
-          placeholder="Search..."
-          value={searchTerm}
-          onChange={handleSearchChange}
-        />
-        {selectedCategory && (
-          <button
-            onClick={clearCategory}
-            className="bg-gray-500 text-white rounded-full py-2 px-2 sm:px-4 hover:bg-gray-600 focus:outline-none focus:bg-gray-700 transition duration-300"
-          >
-            Remove {selectedCategory}
-          </button>
-        )}
+    <div>
+      <div
+        className="relative bg-contain bg-center h-[40vh] w-full flex items-center justify-center text-white text-4xl font-bold"
+        style={{ backgroundImage: `url(${mainbanner})` }}
+      >
+        <div className="bg-black inset-0 opacity-30"></div>
+        <h1 className="absolute z-10">Shop Our Products</h1>
       </div>
-
-      <div className="flex flex-wrap">
-        {filteredProducts.map((product) => (
-          <Product data={product} key={product.id} />
-        ))}
+      <div className="p-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+          {filteredProducts.length > 0 ? (
+            filteredProducts.map((product) => (
+              <Product data={product} key={product.id} />
+            ))
+          ) : (
+            <p>No products found</p>
+          )}
+        </div>
       </div>
     </div>
   );
