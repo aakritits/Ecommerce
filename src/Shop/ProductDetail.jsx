@@ -3,6 +3,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import products from "../products";
 import { useCart } from "../cartcontext/CartContext";
+import { Rating } from "@mantine/core";
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -19,15 +20,21 @@ const ProductDetail = () => {
 
   return (
     <div className="mx-auto max-w-5xl p-6 mt-10">
-      <div className="flex flex-col md:flex-row rounded-lg shadow-lg overflow-hidden">
+      <div className="flex flex-col md:flex-row rounded-lg  overflow-hidden">
         <div className="md:w-1/2 p-4 flex justify-center items-center ">
           <img
             src={product.image}
             alt={product.name}
             className="object-contain h-96 w-full "
-          /> 
+          />
         </div>
         <div className="md:w-1/2 p-6">
+          <div className=" text-md mt-4 text-gray-600 leading-relaxed">
+            Earn 5% reward points on every purchase
+          </div>
+          <div className="my-2">
+            <Rating defaultValue={product.review} readOnly />
+          </div>
           <div className="text-4xl font-bold text-gray-800">{product.name}</div>
           <div className="text-lg mt-4 text-gray-600 leading-relaxed">
             {product.description}

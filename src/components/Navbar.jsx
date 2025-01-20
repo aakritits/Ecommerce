@@ -47,15 +47,26 @@ function Navbar({ setFilteredProducts }) {
   };
 
   return (
-    <nav className="sticky top-0 bg-gray-900 py-4 px-4 flex items-center justify-between z-50">
-      <div className="flex gap-4 items-center">
-        <Link to="/" className="text-white text-lg font-bold" onClick={resetCategory}>
+    <nav className="sticky top-0 bg-white py-4 px-4 flex items-center justify-between z-50">
+      <div className="flex gap-4 items-center text-black">
+        <Link
+          to="/"
+          className="text-black text-lg font-bold"
+          onClick={resetCategory}
+        >
           <HouseLine size={32} />
         </Link>
 
         <div className="relative group focus-within">
-          <Link to="/categories" className="text-white flex items-center gap-2">
-            <BiCategory size={20} /> Shop by categories
+          <Link
+            to="/categories"
+            className="text-black flex items-center gap-2 hover:text-blue-500 transition duration-300 transform hover:scale-105"
+          >
+            <BiCategory
+              size={20}
+              className="transition-transform duration-300 hover:rotate-90"
+            />
+            Shop by categories
           </Link>
         </div>
       </div>
@@ -69,10 +80,16 @@ function Navbar({ setFilteredProducts }) {
           onChange={handleSearchChange}
         />
 
-        <Link to="/cart" className="text-white text-lg font-bold relative">
-          <ShoppingCart size={32} />
+        <Link
+          to="/cart"
+          className="text-black text-lg font-bold relative group"
+        >
+          <ShoppingCart
+            size={32}
+            className="transition-transform duration-300 group-hover:scale-110 group-hover:text-blue-500"
+          />
           {cartItems.length > 0 && (
-            <span className="absolute top-0 right-0 bg-red-500 text-white text-xs rounded-full px-1 transform translate-x-1 -translate-y-1">
+            <span className="absolute top-0 right-0 bg-red-500 text-white text-xs rounded-full px-1 transform translate-x-1 -translate-y-1 transition-transform duration-300 group-hover:scale-110 group-hover:bg-red-600">
               {cartItems.length}
             </span>
           )}
