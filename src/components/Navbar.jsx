@@ -60,13 +60,13 @@ function Navbar({ setFilteredProducts }) {
         <div className="relative group focus-within">
           <Link
             to="/categories"
-            className="text-black flex items-center gap-2 hover:text-blue-500 transition duration-300 transform hover:scale-105 font-semibold text-lg"
+            className="text-black flex items-center gap-2 hover:text-blue-500 transition duration-300 transform hover:scale-105 font-semibold text-sm md:text-lg"
           >
             <BiCategory
               size={20}
               className="transition-transform duration-300 hover:rotate-90"
             />
-            Shop by categories
+            <div className="hidden">Shop by categories</div>
           </Link>
         </div>
       </div>

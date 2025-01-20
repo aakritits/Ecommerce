@@ -39,7 +39,7 @@ const CartPage = () => {
                   <img
                     src={item.image}
                     alt={item.name}
-                    className="h-44 object-cover m-3"
+                    className="h-24 md:h-44 object-cover m-3"
                   />
                   <div className="ml-6">
                     <h2 className="text-lg font-semibold text-gray-800 hover:text-blue-600 transition duration-300 ">
