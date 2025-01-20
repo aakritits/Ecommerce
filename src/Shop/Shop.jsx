@@ -7,17 +7,26 @@ const Shop = ({ filteredProducts }) => {
   return (
     <div>
       {/* Banner Section */}
-      <div className="relative bg-contain bg-center h-[40vh] w-full flex flex-between gap-32 items-center justify-center text-white text-4xl bg-[#0da0de] font-bold">
+      <div className="relative bg-contain bg-center h-[45vh] w-full flex gap-32 items-center justify-center text-white text-4xl bg-gradient-to-r from-[#0da0de] via-[#1d4ed8] to-[#0da0de] font-bold overflow-hidden">
         <div></div>
-        <div className="">
-          <h1 className="flex z-10 text-gray-200">Summer Sale!</h1>
-          <h2 className="flex text-sm text-gray-200 mt-2">
+        <div className="text-center">
+          <h1 className="flex z-10 text-gray-200 hover:text-white transition duration-300 transform hover:scale-105">
+            Summer Sale!
+          </h1>
+          <h2 className="flex text-sm text-gray-200 mt-2 transition duration-300 opacity-80 hover:opacity-100">
             Enjoy discounts on selected items
           </h2>
-          <h3 className="mt-2 text-[#F1CB26]">GET 50% OFF</h3>
+          <h3 className="mt-2 text-[#F1CB26] transition-transform duration-300 transform hover:scale-110">
+            GET 50% OFF
+          </h3>
         </div>
-        <div>
-          <img src={banner} width={252} />
+        <div className="relative">
+          <img
+            src={banner}
+            width={252}
+            className="transform transition-transform duration-500 hover:scale-110 hover:rotate-3"
+          />
+          <div className="absolute inset-0 opacity-20 rounded-full "></div>
         </div>
       </div>
 

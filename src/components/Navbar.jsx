@@ -60,7 +60,7 @@ function Navbar({ setFilteredProducts }) {
         <div className="relative group focus-within">
           <Link
             to="/categories"
-            className="text-black flex items-center gap-2 hover:text-blue-500 transition duration-300 transform hover:scale-105"
+            className="text-black flex items-center gap-2 hover:text-blue-500 transition duration-300 transform hover:scale-105 font-semibold text-lg"
           >
             <BiCategory
               size={20}
@@ -74,7 +74,7 @@ function Navbar({ setFilteredProducts }) {
       <div className="flex items-center space-x-3">
         <input
           type="text"
-          className="py-2 px-6 w-44 sm:w-60 border-2 border-gray-300 rounded-md focus:outline-none focus:border-blue-500 transition duration-300"
+          className="py-2 px-6 w-44 lg:w-56 border-2 border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-500 hover:shadow-sm placeholder-gray-400"
           placeholder="Search products..."
           value={searchTerm}
           onChange={handleSearchChange}
