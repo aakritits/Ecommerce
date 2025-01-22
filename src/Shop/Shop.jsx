@@ -14,7 +14,7 @@ import { FiFilter } from "react-icons/fi";
 import products from "../products";
 
 const Shop = ({ filteredProducts }) => {
-  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [selectedCategory, setSelectedCategory] = useState("all");
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const categories = [
