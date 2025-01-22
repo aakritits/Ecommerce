@@ -11,12 +11,5 @@
     - **React Helmet**: Employs React Helmet for managing document head metadata, improving SEO and browser compatibility.
     - **Fuzzy Search**: Employs search functionality in such a way that users can search through a products description property that is not displayed on the page and can display products even in the case of             spelling errors.
 
-    Installation:
-    1. git clone https://github.com/aakritits/Tradeverse.git
-    2. cd Tradeverse
-    3. cd ecommerce
-    4. npm install
-    5. npm install -D tailwindcss autoprefixer postcss
-    6. npx tailwindcss init -p 
-    7. npm install --save phosphor-react
+   
 
