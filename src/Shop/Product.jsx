@@ -2,16 +2,16 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useCart } from "../cartcontext/CartContext";
 import { Helmet } from "react-helmet";
-import { FaCartPlus } from "react-icons/fa"; 
-import { AiOutlineEye } from "react-icons/ai"; 
-import ProductPopup from "./ProductPopup"; 
+import { FaCartPlus } from "react-icons/fa";
+import { AiOutlineEye } from "react-icons/ai";
+import ProductPopup from "./ProductPopup";
 
 const Product = (props) => {
   const { id, name, image, price } = props.data;
   const { addToCart, cartItems } = useCart();
   const item = cartItems.find((item) => item.id === id);
-  
-  const [isPopupVisible, setIsPopupVisible] = useState(false); 
+
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
 
   const handleClick = (event) => {
     event.preventDefault();
@@ -48,8 +48,8 @@ const Product = (props) => {
         </div>
         <div className="m-4 flex-1 flex flex-col justify-between">
           <div>
-            <span className="block font-bold text-lg">{name}</span>
-            <span className="block text-gray-700 text-base">
+            <span className="block font-bold md:text-lg">{name}</span>
+            <span className="block text-gray-700 text-xs md:text-base">
               Rs {price.toFixed(2)}
             </span>
           </div>
@@ -80,7 +80,7 @@ const Product = (props) => {
       {isPopupVisible && (
         <ProductPopup
           product={{ id, name, image, price }} // Pass product data to popup
-          onClose={() => setIsPopupVisible(false)} // Close popup function
+          onClose={() => setIsPopupVisible(false)}
         />
       )}
     </div>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { ShoppingCart, HouseLine } from "phosphor-react";
 import { Link, useNavigate } from "react-router-dom";
 import { BiCategory } from "react-icons/bi";
+import { useLocation } from "react-router-dom";
 import Fuse from "fuse.js";
 import products from "../products";
 import { useCategory } from "../cartcontext/CategoryContext";
@@ -9,6 +10,8 @@ import { useCart } from "../cartcontext/CartContext";
 
 function Navbar({ setFilteredProducts }) {
   const navigate = useNavigate();
+  const location = useLocation();
+
   const { selectedCategory, setSelectedCategory } = useCategory();
   const { cartItems } = useCart();
   const [searchTerm, setSearchTerm] = useState("");
@@ -66,19 +69,21 @@ function Navbar({ setFilteredProducts }) {
               size={20}
               className="transition-transform duration-300 hover:rotate-90"
             />
-            <div className="hidden">Shop by categories</div>
+            <div className="hidden md:flex">Shop by categories</div>
           </Link>
         </div>
       </div>
 
       <div className="flex items-center space-x-3">
-        <input
-          type="text"
-          className="py-2 px-6 w-44 lg:w-56 border-2 border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-500 hover:shadow-sm placeholder-gray-400"
-          placeholder="Search products..."
-          value={searchTerm}
-          onChange={handleSearchChange}
-        />
+        {location.pathname === "/" && (
+          <input
+            type="text"
+            className="py-2 px-6 w-44 lg:w-56 border-2 border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-500 hover:shadow-sm placeholder-gray-400"
+            placeholder="Search products..."
+            value={searchTerm}
+            onChange={handleSearchChange}
+          />
+        )}
 
         <Link
           to="/cart"
